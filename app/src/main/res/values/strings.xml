@@ -12,5 +12,7 @@
     <string name="app_name">AndroidDevChallenge</string>
     <string name="btn_sign_up">Sign Up</string>
     <string name="btn_log_in">Log In</string>
+    <string name="row_body_title">Align your body</string>
+    <string name="row_mind_title">Align your mind</string>
 
 </resources>

@@ -13,13 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge
+package com.example.androiddevchallenge.ui.welcome
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -37,10 +36,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.unit.dp
+import com.example.androiddevchallenge.R
+import com.example.androiddevchallenge.ui.generic.PrimaryButton
+import com.example.androiddevchallenge.ui.generic.SecondaryButton
 import com.example.androiddevchallenge.ui.theme.typography
 
 @Composable
-fun Welcome() {
+fun Welcome(
+    onClickParent: () -> Unit
+) {
 
     Surface(
         Modifier
@@ -61,17 +65,17 @@ fun Welcome() {
             Modifier
                 .fillMaxHeight()
                 .fillMaxWidth()
-                .padding(PaddingValues(16.dp, 16.dp, 16.dp, 16.dp)),
+                .padding(16.dp),
             verticalArrangement = Arrangement.Center
 
         ) {
-            WelcomeContent()
+            WelcomeContent(onClickParent)
         }
     }
 }
 
 @Composable
-fun WelcomeContent() {
+fun WelcomeContent(onClickParent: () -> Unit) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -81,14 +85,12 @@ fun WelcomeContent() {
         )
         Spacer(modifier = Modifier.height(32.dp))
         PrimaryButton(
-            onClick = {
-            }
+            onClick = onClickParent
         ) {
             Text(
                 stringResource(id = R.string.btn_sign_up).toUpperCase(Locale.current),
                 modifier = Modifier.padding(horizontal = 16.dp),
                 style = typography.button
-
             )
         }
         Spacer(modifier = Modifier.height(8.dp))
