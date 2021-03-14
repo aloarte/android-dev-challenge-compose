@@ -20,17 +20,18 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.R
 
 private val kulimFonts = FontFamily(
-    Font(R.font.KulimPark_Light, FontWeight.Light),
-    Font(R.font.KulimPark_Regular),
+    Font(R.font.kulim_park_light, FontWeight.Light),
+    Font(R.font.kulim_park_regular),
 )
 private val latoFonts = FontFamily(
-    Font(R.font.Lato_Bold, FontWeight.Bold),
-    Font(R.font.Lato_Regular),
+    Font(R.font.lato_bold, FontWeight.ExtraBold),
+    Font(R.font.lato_regular),
 )
 
 val typography = Typography(
@@ -58,9 +59,9 @@ val typography = Typography(
     ),
     button = TextStyle(
         fontFamily = latoFonts,
-        fontWeight = FontWeight.Bold,
+        fontWeight = FontWeight.ExtraBold,
         fontSize = 14.sp,
-        letterSpacing = 1.15.em
+        letterSpacing = 1.15.sp
 
     ),
     caption = TextStyle(
