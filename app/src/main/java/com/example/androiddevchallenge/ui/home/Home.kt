@@ -54,6 +54,15 @@ import java.util.Locale
 fun Home(
     onCharWritten: (String) -> Unit
 ) {
+
+    val collectionsList = listOf(
+        CollectionViewState("Short mantras", R.mipmap.stress_anxiety),
+        CollectionViewState("Stress and anxiety", R.mipmap.stress_anxiety),
+        CollectionViewState("Overwhelmed", R.mipmap.overwhelmed),
+        CollectionViewState("Nature meditations", R.mipmap.overwhelmed),
+        CollectionViewState("Self-massage", R.mipmap.self_massage),
+        CollectionViewState("Nightly wind down", R.mipmap.night_wind_down)
+    )
     val alignYourBodyList = listOf(
         AlignViewState("Inversions", R.mipmap.inversions),
         AlignViewState("Quick Yoga", R.mipmap.quick_yoga),
@@ -90,12 +99,14 @@ fun Home(
                 textFieldValue = textState,
                 onTextChanged = { textState = it }
             )
+            RowTitleTextView(stringResource(id = R.string.row_collections_title))
+            CollectionsList(Modifier, collectionsList)
             Spacer(modifier = Modifier.height(40.dp))
             RowTitleTextView(stringResource(id = R.string.row_body_title))
-            MyComposeList(Modifier, alignYourBodyList)
+            AlignList(Modifier, alignYourBodyList)
             Spacer(modifier = Modifier.height(40.dp))
             RowTitleTextView(stringResource(id = R.string.row_mind_title))
-            MyComposeList(Modifier, alignYourMindList)
+            AlignList(Modifier, alignYourMindList)
         }
     }
 }

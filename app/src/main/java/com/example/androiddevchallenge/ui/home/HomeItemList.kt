@@ -17,6 +17,7 @@ package com.example.androiddevchallenge.ui.home
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -34,6 +35,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.example.androiddevchallenge.ui.generic.MySootheSurface
 import com.example.androiddevchallenge.ui.theme.typography
 
 data class CollectionViewState(
@@ -47,7 +49,20 @@ data class AlignViewState(
 )
 
 @Composable
-fun MyComposeList(
+fun CollectionsList(
+    modifier: Modifier = Modifier,
+    itemViewStates: List<CollectionViewState>
+) {
+    LazyRow(modifier = modifier) {
+        items(itemViewStates) { data ->
+            CollectionListItem(data)
+//            if (data != itemViewStates.last()) Spacer(modifier = Modifier.width(10.dp))
+        }
+    }
+}
+
+@Composable
+fun AlignList(
     modifier: Modifier = Modifier,
     itemViewStates: List<AlignViewState>
 ) {
@@ -55,6 +70,36 @@ fun MyComposeList(
         items(itemViewStates) { data ->
             AlignListItem(data)
             if (data != itemViewStates.last()) Spacer(modifier = Modifier.width(10.dp))
+        }
+    }
+}
+
+@Composable
+fun CollectionListItem(itemState: CollectionViewState) {
+    Column(
+        Modifier.padding(top = 8.dp, bottom = 8.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        MySootheSurface(
+            shape = MaterialTheme.shapes.small,
+            color = MaterialTheme.colors.onSecondary,
+            contentColor = MaterialTheme.colors.onSecondary,
+            modifier = Modifier
+                .width(192.dp)
+                .height(56.dp)
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Image(
+                    modifier = Modifier
+                        .size(56.dp),
+                    contentScale = ContentScale.Crop,
+                    painter = painterResource(itemState.imageDrawableId),
+                    contentDescription = null
+                )
+                ItemTextView(title = itemState.text, modifier = Modifier.padding(top = 8.dp, start = 16.dp, bottom = 8.dp, end = 16.dp))
+            }
         }
     }
 }
@@ -79,10 +124,11 @@ fun AlignListItem(itemState: AlignViewState) {
 }
 
 @Composable
-private fun ItemTextView(title: String) {
+private fun ItemTextView(title: String, modifier: Modifier = Modifier) {
     Text(
+        modifier = modifier,
         text = title,
-        style = typography.body1,
+        style = typography.h3,
         color = MaterialTheme.colors.primary
     )
 }
