@@ -15,5 +15,7 @@
     <string name="row_collections_title">Favorite Collections</string>
     <string name="row_body_title">Align your body</string>
     <string name="row_mind_title">Align your mind</string>
+    <string name="bottom_nav_home">Home</string>
+    <string name="bottom_nav_profile">Profile</string>
 
 </resources>

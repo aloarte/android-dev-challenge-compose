@@ -51,15 +51,11 @@ import java.util.Locale
 
 @ExperimentalFoundationApi
 @Composable
-fun Home(
-    onCharWritten: (String) -> Unit
-) {
+fun Home() {
 
     val collectionsList = listOf(
-        CollectionViewState("Short mantras", R.mipmap.stress_anxiety),
         CollectionViewState("Stress and anxiety", R.mipmap.stress_anxiety),
         CollectionViewState("Overwhelmed", R.mipmap.overwhelmed),
-        CollectionViewState("Nature meditations", R.mipmap.overwhelmed),
         CollectionViewState("Self-massage", R.mipmap.self_massage),
         CollectionViewState("Nightly wind down", R.mipmap.night_wind_down)
     )
@@ -156,6 +152,26 @@ private fun UserInputText(
                     cursorBrush = SolidColor(LocalContentColor.current),
                     textStyle = LocalTextStyle.current.copy(color = LocalContentColor.current)
                 )
+
+//                TextField(
+//                    value = "", onValueChange = { },
+//                    leadingIcon = {
+//                        Icon(
+//                            painter = painterResource(id = R.drawable.ic_search),
+//                            contentDescription = ""
+//                        )
+//                    },
+//                    maxLines = 1,
+//                    placeholder = { Text(text = "Enter user name") },
+//                    colors = {backgroundColor= MaterialTheme.colors.onSecondary,
+//                        placeholderColor = MaterialTheme.colors.primary,
+//                        labelColor = MaterialTheme.colors.primary,
+//                        textColor =  MaterialTheme.colors.primary}
+//
+//
+//                    )
+//                )
+
             }
         }
     }

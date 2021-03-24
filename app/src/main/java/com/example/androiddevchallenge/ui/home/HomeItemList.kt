@@ -56,7 +56,6 @@ fun CollectionsList(
     LazyRow(modifier = modifier) {
         items(itemViewStates) { data ->
             CollectionListItem(data)
-//            if (data != itemViewStates.last()) Spacer(modifier = Modifier.width(10.dp))
         }
     }
 }
@@ -98,7 +97,15 @@ fun CollectionListItem(itemState: CollectionViewState) {
                     painter = painterResource(itemState.imageDrawableId),
                     contentDescription = null
                 )
-                ItemTextView(title = itemState.text, modifier = Modifier.padding(top = 8.dp, start = 16.dp, bottom = 8.dp, end = 16.dp))
+                ItemTextView(
+                    title = itemState.text,
+                    modifier = Modifier.padding(
+                        top = 8.dp,
+                        start = 16.dp,
+                        bottom = 8.dp,
+                        end = 16.dp
+                    )
+                )
             }
         }
     }
