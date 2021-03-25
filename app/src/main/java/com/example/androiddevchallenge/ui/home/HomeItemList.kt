@@ -56,6 +56,7 @@ fun CollectionsList(
     LazyRow(modifier = modifier) {
         items(itemViewStates) { data ->
             CollectionListItem(data)
+            if (data != itemViewStates.last()) Spacer(modifier = Modifier.width(10.dp))
         }
     }
 }
@@ -81,7 +82,7 @@ fun CollectionListItem(itemState: CollectionViewState) {
     ) {
         MySootheSurface(
             shape = MaterialTheme.shapes.small,
-            color = MaterialTheme.colors.onSecondary,
+            color = MaterialTheme.colors.onSurface,
             contentColor = MaterialTheme.colors.onSecondary,
             modifier = Modifier
                 .width(192.dp)

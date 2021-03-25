@@ -17,7 +17,7 @@ package com.example.androiddevchallenge.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val gray800 = Color(0x80333333)
+val gray800 = Color(0xFF444444)
 val gray900 = Color(0xFF333333)
 val taupe100 = Color(0xFFF0EAE2)
 val taupe800 = Color(0xFF655454)

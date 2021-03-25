@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge.ui.welcome
+package com.example.androiddevchallenge.ui.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -25,7 +25,7 @@ import androidx.navigation.Navigation
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.theme.MySootheTheme
 
-class WelcomeFragment : Fragment() {
+class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,9 +33,9 @@ class WelcomeFragment : Fragment() {
     ): View = ComposeView(inflater.context).apply {
         setContent {
             MySootheTheme {
-                Welcome {
+                Login {
                     Navigation.findNavController(this).navigate(
-                        R.id.nav_login
+                        R.id.nav_home
                     )
                 }
             }
