@@ -152,26 +152,6 @@ private fun UserInputText(
                     cursorBrush = SolidColor(LocalContentColor.current),
                     textStyle = LocalTextStyle.current.copy(color = LocalContentColor.current)
                 )
-
-//                TextField(
-//                    value = "", onValueChange = { },
-//                    leadingIcon = {
-//                        Icon(
-//                            painter = painterResource(id = R.drawable.ic_search),
-//                            contentDescription = ""
-//                        )
-//                    },
-//                    maxLines = 1,
-//                    placeholder = { Text(text = "Enter user name") },
-//                    colors = {backgroundColor= MaterialTheme.colors.onSecondary,
-//                        placeholderColor = MaterialTheme.colors.primary,
-//                        labelColor = MaterialTheme.colors.primary,
-//                        textColor =  MaterialTheme.colors.primary}
-//
-//
-//                    )
-//                )
-
             }
         }
     }

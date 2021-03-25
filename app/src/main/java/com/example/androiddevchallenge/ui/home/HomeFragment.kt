@@ -43,9 +43,8 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.navigate
 import androidx.navigation.compose.rememberNavController
 import com.example.androiddevchallenge.ui.theme.MySootheTheme
-
+@ExperimentalFoundationApi
 class HomeFragment : Fragment() {
-    @ExperimentalFoundationApi
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -87,10 +86,10 @@ class HomeFragment : Fragment() {
                                             if (currentRoute != screen.route) {
                                                 navController.navigate(screen.route)
                                             }
-                                        })
+                                        }
+                                    )
                                 }
                             }
-
                         }
                     ) {
                         HomeScreenController(navController = navController)
@@ -108,7 +107,6 @@ class HomeFragment : Fragment() {
                 Home()
             }
             composable("profile") {
-
             }
         }
     }
