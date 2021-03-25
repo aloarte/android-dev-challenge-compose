@@ -17,5 +17,9 @@
     <string name="row_mind_title">Align your mind</string>
     <string name="bottom_nav_home">Home</string>
     <string name="bottom_nav_profile">Profile</string>
+    <string name="search_textfield">Search</string>
+
+
+
 
 </resources>
